@@ -25,6 +25,7 @@ public:
     virtual void sendConfirmation(const std::string& userId, const std::string& message) = 0;
 };
 
+// Appends booking records to CSV
 class CsvFileStorage : public IStorageRepository {
 private:
     std::string filename;
