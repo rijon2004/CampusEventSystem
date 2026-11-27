@@ -1,0 +1,27 @@
+﻿name: C++ GoogleTest & GoogleMock CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install G++ and GoogleTest/GoogleMock
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++ libgtest-dev libgmock-dev
+
+      - name: Compile Main CLI App
+        run: g++ -std=c++17 -Isrc src/main.cpp -o campus_app
+
+      - name: Compile and Run Unit Tests
+        run: |
+          g++ -std=c++17 -Isrc tests/system_test.cpp -lgtest -lgmock -pthread -o run_tests
+          ./run_tests

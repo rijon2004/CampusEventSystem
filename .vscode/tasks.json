@@ -1,0 +1,31 @@
+﻿{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "Build Active File",
+      "command": "D:/Software/MinGW/bin/g++.exe",
+      "args": [
+        "${file}",
+        "C:/Users/VICTUS/Downloads/googletest-main/googletest/src/gtest-all.cc",
+        "C:/Users/VICTUS/Downloads/googletest-main/googlemock/src/gmock-all.cc",
+        "-I${workspaceFolder}/src",
+        "-IC:/Users/VICTUS/Downloads/googletest-main/googletest/include",
+        "-IC:/Users/VICTUS/Downloads/googletest-main/googletest",
+        "-IC:/Users/VICTUS/Downloads/googletest-main/googlemock/include",
+        "-IC:/Users/VICTUS/Downloads/googletest-main/googlemock",
+        "-pthread",
+        "-o",
+        "${workspaceFolder}/app.exe"
+      ],
+      "options": {
+        "cwd": "D:/Software/MinGW/bin"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
