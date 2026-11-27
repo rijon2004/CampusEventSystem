@@ -1,4 +1,5 @@
-﻿# Campus Event & Room Booking System
+# Campus Event System - RUET CSE 3206
+# Campus Event & Room Booking System
 
 A C++17 event reservation application built for CSE 3206 Software Engineering Sessional.
 
